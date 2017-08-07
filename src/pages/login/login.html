@@ -1,0 +1,25 @@
+<ion-content padding>
+  <h2 text-center>QR Scanner</h2>
+  <form #form="ngForm" (ngSubmit)="onLogin()">
+    <div class="login-content">
+      <ion-list>
+        <ion-item>
+          <ion-label floating>Username</ion-label>
+          <ion-input [(ngModel)]="username" required name="email" clearInput="true" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Password</ion-label>
+          <ion-input [(ngModel)]="password" type="password" required name="password" clearInput="true"></ion-input>
+        </ion-item>
+      </ion-list>
+    </div>
+
+    <div text-center padding>
+      <button ion-button round color="secondary" class="login-btn" type="submit" [disabled]="!form.valid">Login</button>
+    </div>
+  </form>
+  <div text-center padding>
+    <p>Don't have an account ?</p>
+    <button ion-button round color="secondary" class="signup-btn" (click)="signUp()">Sign Up</button>
+  </div>
+</ion-content>

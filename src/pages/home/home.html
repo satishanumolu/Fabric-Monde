@@ -1,0 +1,11 @@
+<ion-content padding>
+  <h2 text-center>QR Scanner</h2>
+  <div padding>
+    <div text-center>
+      <ion-icon class="barcode" ios="ios-barcode" md="md-barcode"></ion-icon>
+      <button ion-button round color="secondary" class="scan-btn" (click)="scanBarcode()">Scan</button>
+    </div>
+    <h3>Scan Results</h3>
+    <p>{{scanData}}</p>
+  </div>
+</ion-content>

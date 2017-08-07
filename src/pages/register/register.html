@@ -1,0 +1,37 @@
+<ion-content padding>
+  <h2 text-center>QR Scanner</h2>
+  <form #form="ngForm" (ngSubmit)="signUp()">
+    <div class="sign-up">
+      <ion-list>
+        <ion-item>
+          <ion-label floating>First Name</ion-label>
+          <ion-input [(ngModel)]="user.firstName" required name="firstName" clearInput="true" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Last Name</ion-label>
+          <ion-input [(ngModel)]="user.lastName" required name="lastName" clearInput="true" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Email</ion-label>
+          <ion-input [(ngModel)]="user.email" required name="email" clearInput="true" type="email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Password</ion-label>
+          <ion-input [(ngModel)]="user.password" required name="password" clearInput="true" type="password"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Store Id</ion-label>
+          <ion-input [(ngModel)]="user.storeId" required name="storeId" clearInput="true" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Phone No</ion-label>
+          <ion-input [(ngModel)]="user.phone" required name="phone" ng-maxlength="10" clearInput="true" type="tel"></ion-input>
+        </ion-item>
+      </ion-list>
+    </div>
+
+    <div text-center padding>
+      <button ion-button round color="secondary" class="register-btn" type="submit" [disabled]="!form.valid">Register</button>
+    </div>
+  </form>
+</ion-content>
