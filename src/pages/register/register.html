@@ -30,6 +30,10 @@
       </ion-list>
     </div>
 
+    <p *ngIf="errorMessage" class="error">
+      {{errorMessage}}
+    </p>
+
     <div text-center padding>
       <button ion-button round color="secondary" class="register-btn" type="submit" [disabled]="!form.valid">Register</button>
     </div>

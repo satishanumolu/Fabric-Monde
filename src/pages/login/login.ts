@@ -17,15 +17,12 @@ export class LoginPage {
   }
 
   onLogin() {
-    console.log(this.username);
-    console.log(this.password);
     this.userService.login(this.username, this.password)
-      /*.subscribe((res) => {
-        alert(res);
+      .subscribe((res) => {
         this.navCtrl.push(HomePage);
       }, (err) => {
         alert(err);
-      });*/
+      });
   }
 
   signUp() {

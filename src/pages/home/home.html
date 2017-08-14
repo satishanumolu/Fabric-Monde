@@ -5,7 +5,28 @@
       <ion-icon class="barcode" ios="ios-barcode" md="md-barcode"></ion-icon>
       <button ion-button round color="secondary" class="scan-btn" (click)="scanBarcode()">Scan</button>
     </div>
+    <p text-center>OR</p>
+    <ion-row>
+      <ion-col col-8>
+        <ion-item class="item-input">
+          <ion-input [(ngModel)]="itemId" placeholder="Item Id"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col col-4>
+        <button [disabled]="!itemId" ion-button color="secondary" class="scan-btn" (click)="getDetails()">Get Details</button>
+      </ion-col>
+    </ion-row>
+
     <h3>Scan Results</h3>
-    <p>{{scanData}}</p>
+    <div *ngIf="!showError && scanData">
+      <p><strong>Name:</strong> {{scanData.name}}</p>
+      <p><strong>Cost:</strong> {{scanData.cost}}</p>
+      <p><strong>Color:</strong> {{scanData.color}}</p>
+      <p><strong>Price:</strong> {{scanData.price}}</p>
+      <img *ngIf="scanData.imageURL" [src]="scanData.imageURL" />
+    </div>
+    <div *ngIf="showError">
+      Unable to get the details. please try again!
+    </div>
   </div>
 </ion-content>

@@ -9,6 +9,7 @@ import { UserService } from "../../services/user.service";
 })
 export class RegisterPage {
   private user: any = {};
+  private errorMessage: any = '';
 
   constructor(private navCtrl: NavController, private userService: UserService) {
 
@@ -16,12 +17,10 @@ export class RegisterPage {
 
   signUp() {
     this.userService.register(this.user)
-      /*.subscribe((res) => {
-        alert(res);
+      .subscribe((res) => {
         this.navCtrl.push(LoginPage);
       }, (err) => {
-        alert(err);
-      });*/
-    this.navCtrl.push(LoginPage);
+        this.errorMessage = err.error;
+      });
   }
 }

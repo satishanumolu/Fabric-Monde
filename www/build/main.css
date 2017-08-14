@@ -25203,3 +25203,7 @@ page-home .barcode {
   font-size: 10.2em;
   display: block;
 }
+
+page-register .error {
+  color: red;
+}
